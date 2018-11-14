@@ -1,0 +1,8 @@
+gcc -o ASCII ASCII.c
+gcc -o switch switch.c
+gcc -o abs abs.c
+gcc -o convert convert.c
+./ASCII
+./switch
+./abs
+./convert

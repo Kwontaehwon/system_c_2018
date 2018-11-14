@@ -1,0 +1,10 @@
+gcc -o types types.c
+gcc -o rand rand.c
+gcc -o srand srand.c
+gcc -o power_square power_square.c -lm
+gcc -o my_sqrt my_sqrt.c -lm
+./types
+./rand
+./srand
+./power_square
+./my_sqrt

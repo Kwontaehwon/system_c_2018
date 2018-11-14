@@ -1,0 +1,13 @@
+gcc -o strtok strtok.c
+gcc -o argument argument.c
+gcc -o hanoi hanoi.c
+gcc -o fib fib.c
+gcc -o maze maze.c
+gcc -o my_strtok my_strtok.c
+
+./strtok
+./argument
+./hanoi
+./fib
+./maze
+./my_strtok

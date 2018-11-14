@@ -1,0 +1,11 @@
+gcc -o string_input string_input.c
+gcc -o func_str func_str.c
+gcc -o my_str my_str.c
+
+./string_input
+./func_str
+./my_str
+
+echo "infix:[A+B%C*(D+E/(F-G)*H)]"
+echo "prefix:[+A*%BC+D*/E-FGH]"
+echo "postfix:[ABC%DEFG-/H*+*+]"
