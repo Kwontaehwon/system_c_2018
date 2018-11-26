@@ -1,0 +1,6 @@
+echo -e " A is for apple or alphabet pie\nwhich all get a slice of, come taste it and try." >input
+gcc sort.h main.c sort.c swap.c wrt.c error.c
+
+
+
+./a.out < input

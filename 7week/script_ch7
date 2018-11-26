@@ -1,0 +1,5 @@
+gcc -o structure structure.c
+gcc -o dll dll.c
+
+./structure
+./dll

@@ -1,0 +1,31 @@
+echo -e "\033[1;36m[Ex. 1] fio\033[0m"
+gcc -o fio fio.c
+echo -e "233423541354.143543524352+2342314123413.34523453-321341241.12341234" > my_file
+echo "(cat my_file)"
+cat my_file
+./fio
+echo "(cat outfile)"
+cat outfile
+echo ""
+
+echo -e "\033[1;36m[Ex. 2] double_space\033[0m"
+gcc -o double_space double_space.c
+cp my_file my_file2
+cp outfile outfile2
+./double_space my_file2 outfile2
+echo "(cat outfile2)"
+cat outfile2
+echo ""
+
+echo -e "\033[1;36m[Ex. 3] dbl_with_caps\033[0m"
+gcc -o dbl_with_caps dbl_with_caps.c
+echo "A is for apple and alphabet pie." > my_file3
+./dbl_with_caps my_file3
+echo "(cat my_file3)"
+cat my_file3
+echo ""
+
+
+echo -e "\033[1;36m[Ex. 4] backword\033[0m"
+gcc -o backward backward.c
+echo "my_file" | ./backward

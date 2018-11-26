@@ -14,48 +14,27 @@ int maze[N][N] = {
 	{0, 1, 0, 0, 0, 1, 0, 1},
 	{0, 0, 0, 1, 0, 0, 0, 1},
 	{0, 1, 1, 1, 0, 1, 0, 0}
-};
-
-int findPath(int x, int y){
-	if (x==7&&y==7){
-		maze[x][y]=2;
-		return 1;
-	 }
-	else{
-		if ((maze[x-1][y]==0)&&(x>0)){
-			maze[x][y] = 2;
-        	findPath(x-1,y);
-		}
-		else if ((maze[x][y+1]==0)&&(y<7)){
-			maze[x][y] = 2;
-			findPath(x,y+1);
-		}
-		else if ((maze[x+1][y]==0)&&(x<7)){
-			maze[x][y] = 2;
-			findPath(x+1,y);
-		}
-		else if ((maze[x][y-1]==0)&&(y>0)){
-			maze[x][y] = 2;
-			findPath(x,y-1);
-		}
-		else if ((maze[x-1][y]==2)&&(x>0)){
-			maze[x][y] = 3;
-			findPath(x-1,y);
-		}
-		else if ((maze[x][y+1]==2)&&(y<7)){
-			maze[x][y] = 3;
-			findPath(x,y+1);
-		}
-		else if ((maze[x+1][y]==2)&&(x<7)){
-			maze[x][y] = 3;
-			findPath(x+1,y);
-		}
-		else if ((maze[x][y-1]==2)&&(y>0)){
-			maze[x][y] = 3;
-			findPath(x,y-1);
-		}   
-   }
 }
+
+int findPath(int x, int y) {
+    if (x < 0 || y < 0 || x >= N || y >= N)
+        return 0;
+    else if (maze[x][y] != UNVISITIED_WAY)
+        return 0;
+    else if (x == N - 1 && y == N - 1) {
+        maze[x][y] = POSSIBLE_WAY;
+        return 1;
+    }
+    else {
+        maze[x][y] = POSSIBLE_WAY;
+        if (findPath(x - 1, y) || findPath(x, y + 1) || findPath(x + 1, y) || findPath(x, y - 1)) {
+            return 1;
+        }
+        maze[x][y] = BLOCKED;
+        return 0;
+    }
+}
+
 
 int main(){
 	int i, j;
