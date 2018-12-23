@@ -1,0 +1,5 @@
+gcc -o largest_2D largest_2D.c
+gcc -o largest_1D largest_1D.c
+
+./largest_1D
+./largest_2D
